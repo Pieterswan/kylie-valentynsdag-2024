@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="af">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Will You Be My Valentine?</title>
+<title>Sal jy my Valentyn wees?</title>
 <style>
     body {
         font-family: Arial, sans-serif;
@@ -31,6 +31,36 @@
         margin-bottom: 30px;
     }
 
+    .buttons {
+        display: flex;
+        justify-content: center;
+    }
+
+    .button {
+        padding: 10px 20px;
+        margin: 0 10px;
+        border: none;
+        background-color: #ff4d4d;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        transition: transform 0.5s;
+    }
+
+    .button:hover {
+        transform: scale(1.1);
+    }
+
+    .no:hover {
+        animation: spring 0.5s infinite alternate;
+    }
+
+    @keyframes spring {
+        to {
+            transform: translateY(-10px);
+        }
+    }
+
     .heart {
         color: #ff4d4d;
         font-size: 60px;
@@ -46,8 +76,12 @@
 </head>
 <body>
     <div class="container">
-        <h1>Will You Be My Valentine?</h1>
-        <p>Click the heart to accept...</p>
+        <h1>Sal jy my Valentyn wees?</h1>
+        <p>Klik die knoppie van jou keuse...</p>
+        <div class="buttons">
+            <button class="button yes">Ja</button>
+            <button class="button no">Nee</button>
+        </div>
         <div class="heart">&hearts;</div>
     </div>
 </body>
