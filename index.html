@@ -1,14 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello Maatjie</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Will You Be My Valentine?</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f7f7f7;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    
+    .container {
+        text-align: center;
+    }
+
+    h1 {
+        color: #ff4d4d;
+        font-size: 36px;
+        margin-bottom: 20px;
+    }
+
+    p {
+        font-size: 20px;
+        margin-bottom: 30px;
+    }
+
+    .heart {
+        color: #ff4d4d;
+        font-size: 60px;
+        animation: beat 1s infinite alternate;
+    }
+
+    @keyframes beat {
+        to {
+            transform: scale(1.2);
+        }
+    }
+</style>
 </head>
 <body>
-    
-    <marquee behavior="" direction="">Hello my maatjie hoe gaan dit?</marquee>
-   
+    <div class="container">
+        <h1>Will You Be My Valentine?</h1>
+        <p>Click the heart to accept...</p>
+        <div class="heart">&hearts;</div>
+    </div>
 </body>
 </html>
