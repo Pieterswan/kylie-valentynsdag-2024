@@ -25,16 +25,19 @@
         color: #ff4d4d;
         font-size: 36px;
         margin-bottom: 20px;
+        transition: opacity 1s; /* Add opacity transition */
     }
 
     p {
         font-size: 20px;
         margin-bottom: 30px;
+        transition: opacity 1s; /* Add opacity transition */
     }
 
     .buttons {
         display: flex;
         justify-content: center;
+        transition: opacity 1s; /* Add opacity transition */
     }
 
     .button {
@@ -45,7 +48,7 @@
         color: white;
         font-size: 16px;
         cursor: pointer;
-        transition: transform 0.5s;
+        transition: transform 0.5s, opacity 1s; /* Add opacity transition */
     }
 
     .button:hover {
@@ -107,6 +110,7 @@
 
     .heart-popup.active {
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
     }
@@ -121,6 +125,31 @@
         color: black; /* Changed color to black */
         font-size: 20px;
     }
+
+    .buzz-lightyear-img {
+        height: 300px; /* Adjust image height as needed */
+        margin-bottom: 20px;
+        border: 5px solid lightblue;
+        border-radius: 10px;
+        box-shadow: 0 0 10px lightblue; /* Add a light blue shadow */
+    }
+
+    .right-align {
+        text-align: right;
+        color: red;
+    }
+
+    .dark-edge {
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8); /* Add dark edges to text */
+    }
+
+    .big-text {
+        font-size: 40px; /* Increase font size */
+    }
+
+    .button.hide {
+        opacity: 0; /* Hide the buttons by default */
+    }
 </style>
 </head>
 <body>
@@ -132,8 +161,11 @@
             <button class="button no" id="noButton">Nee</button>
         </div>
         <div class="heart-popup" id="heartPopup">
+            <img src="https://i.pinimg.com/originals/08/ab/0a/08ab0ad090c241b4a6daadc437ea231e.jpg" alt="Buzz Lightyear" class="buzz-lightyear-img">
             <div class="heart-message">
-                Pieter<span class="heart">❤️</span>Kylie <!-- Combined words without space -->
+                 <span class="right-align dark-edge big-text">Kylie</span><span style="color: lightblue;" class="dark-edge big-text"> Jordaan !!!</span>
+                 <br>
+                <span class="heart">Jy is die grootste blessing wat die Here vir my gegee het.  <br>Dankie dat jy my gekies. <br> <strong> Ek is lief vir jou. </strong> <br>Vir altyd en vir ewig</span>
             </div>
         </div>
     </div>
@@ -141,6 +173,11 @@
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const noButton = document.getElementById('noButton');
+            const buttons = document.querySelector('.buttons');
+            const yesButton = document.querySelector('.yes');
+            const heartPopup = document.getElementById('heartPopup');
+            const h1 = document.querySelector('h1');
+            const p = document.querySelector('p');
 
             noButton.addEventListener('mouseenter', function() {
                 const newX = Math.random() * (window.innerWidth - 200); // Adjust 200 to match button size
@@ -150,11 +187,11 @@
                 noButton.classList.add('active');
             });
 
-            const yesButton = document.querySelector('.yes');
-            const heartPopup = document.getElementById('heartPopup');
-
             yesButton.addEventListener('click', function() {
                 heartPopup.classList.add('active');
+                h1.style.opacity = 0; // Fading out h1
+                p.style.opacity = 0; // Fading out p
+                buttons.classList.add('hide'); // Hide the buttons
             });
         });
     </script>
