@@ -150,6 +150,16 @@
     .button.hide {
         opacity: 0; /* Hide the buttons by default */
     }
+
+    .yes.hide, .no.hide {
+        display: none; /* Hide the "Ja" and "Nee" buttons */
+    }
+
+    .valentine-info {
+        font-size: 18px;
+        margin-top: 20px;
+        color: #666; /* Gray color */
+    }
 </style>
 </head>
 <body>
@@ -157,7 +167,7 @@
         <h1>Kylie, Sal jy my Valentyn wees?</h1>
         <p>Klik die knoppie van jou keuse...</p>
         <div class="buttons">
-            <button class="button yes">Ja</button>
+            <button class="button yes" onclick="playBuzzSound()">Ja</button>
             <button class="button no" id="noButton">Nee</button>
         </div>
         <div class="heart-popup" id="heartPopup">
@@ -166,11 +176,19 @@
                  <span class="right-align dark-edge big-text">Kylie</span><span style="color: lightblue;" class="dark-edge big-text"> Jordaan !!!</span>
                  <br>
                 <span class="heart">Jy is die grootste blessing wat die Here vir my gegee het.  <br>Dankie dat jy my gekies. <br> <strong> Ek is lief vir jou. </strong> <br>Vir altyd en vir ewig</span>
+                <div class="valentine-info">Met liefde, Pieter - Valentyn 2024</div>
             </div>
-        </div>
+        </div> 
     </div>
+    
+
 
     <script>
+        function playBuzzSound() {
+            const audio = document.getElementById('buzzSound');
+            audio.play();
+        }
+
         document.addEventListener("DOMContentLoaded", function() {
             const noButton = document.getElementById('noButton');
             const buttons = document.querySelector('.buttons');
@@ -192,6 +210,8 @@
                 h1.style.opacity = 0; // Fading out h1
                 p.style.opacity = 0; // Fading out p
                 buttons.classList.add('hide'); // Hide the buttons
+                yesButton.classList.add('hide'); // Hide the "Ja" button
+                noButton.classList.add('hide'); // Hide the "Nee" button
             });
         });
     </script>
